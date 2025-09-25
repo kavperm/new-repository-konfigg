@@ -2,38 +2,28 @@ import os
 import socket
 import shlex
 
-def main():
-    while True:
-        user = os.getenv('USER') or os.getenv('USERNAME')
-        hostname = socket.gethostname()
-        cwd = os.getcwd().replace(os.path.expanduser("~"), "~")
-        prompt = f"{user}@{hostname}:{cwd}$ "
+def get_prompt():
+    user = os.getenv('USER')
+    hostname = socket.gethostname()
+    current_dir = os.getcwd()
+    home_dir = os.getenv('HOME')
+    
+    if current_dir.startswith(home_dir):
+        current_dir = '~' + current_dir[len(home_dir):]
+    return f"{user}@{hostname}:{current_dir}$ "
+
+while True:
+        input_line = input(get_prompt())
+        args = shlex.split(input_line)
         
-        # Читаем ввод
-        try:
-            input_line = input(prompt).strip()
-        except EOFError:
-            break  # В случае Ctrl+D
-            
-        if not input_line:
-            continue  # Пустой ввод
-            
-        # Парсим аргументы
-        try:
-            args = shlex.split(input_line)
-        except ValueError as e:
-            print(f"Parser error: {e}")
+        if not args:
             continue
             
-        # Обрабатываем команды
         if args[0] == "exit":
             break
         elif args[0] == "ls":
-            print(f"ls called with arguments: {args[1:]}")
+            print(f"ls: {args[1:]}")
         elif args[0] == "cd":
-            print(f"cd called with arguments: {args[1:]}")
+            print(f"cd: {args[1:]}")
         else:
-            print(f"Command not found: {args[0]}")
-
-if __name__ == "__main__":
-    main()
+            print(f"{args[0]}: command not found")

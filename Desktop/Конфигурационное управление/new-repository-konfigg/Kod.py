@@ -5,12 +5,7 @@ import shlex
 def get_prompt():
     user = os.getenv('USER')
     hostname = socket.gethostname()
-    current_dir = os.getcwd()
-    home_dir = os.getenv('HOME')
-    
-    if current_dir.startswith(home_dir):
-        current_dir = '~' + current_dir[len(home_dir):]
-    return f"{user}@{hostname}:{current_dir}$ "
+    return f"{user}@{hostname}:~$ "
 
 while True:
         input_line = input(get_prompt())
