@@ -19,10 +19,10 @@
 - Выполнение скриптов с пропуском ошибок
 
 ### Сборка и запуск
-import os
-import socket
-import shlex
-import argparse
+<!-- #import os
+#import socket
+#import shlex
+#import argparse
 
 def get_prompt():
     user = os.getenv('USER')
@@ -73,9 +73,10 @@ while True:
     result = act(a)
     if result == "exit":
         break
-    print(result)
+    print(result) -->
 
 ### Пример использования
+<!-- 
 ---------------------------
 Путь VFS = None
 Путь скрипт = test.script
@@ -89,4 +90,4 @@ lalalalalalalala: command not found
 ak@MacBook-Air-A.local:~$ ls
 ls: []
 ak@MacBook-Air-A.local:~$ exit
-ak@MacBook-Air-A new-repository-konfigg % 
+ak@MacBook-Air-A new-repository-konfigg %   -->
