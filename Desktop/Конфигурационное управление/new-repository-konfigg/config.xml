@@ -1,0 +1,8 @@
+<config>
+    <package_name>org.springframework.boot:spring-boot-starter-web:2.7.0</package_name>
+    <repository_url>https://repo1.maven.org/maven2</repository_url>
+    <test_repo_mode>false</test_repo_mode>
+    <output_filename>graph.png</output_filename>
+    <max_depth>3</max_depth>
+    <filter_substring></filter_substring>
+</config>

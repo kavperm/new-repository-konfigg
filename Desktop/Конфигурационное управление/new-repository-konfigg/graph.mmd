@@ -1,0 +1,12 @@
+graph TD
+    org.springframework.boot_spring-boot-starter-web_2.7.0["org.springframework.boot:spring-boot-starter-web:2.7.0"]
+    org.springframework.boot_spring-boot-starter["org.springframework.boot:spring-boot-starter"]
+    org.springframework.boot_spring-boot-starter-web_2.7.0 --> org.springframework.boot_spring-boot-starter
+    org.springframework.boot_spring-boot-starter-json["org.springframework.boot:spring-boot-starter-json"]
+    org.springframework.boot_spring-boot-starter-web_2.7.0 --> org.springframework.boot_spring-boot-starter-json
+    org.springframework.boot_spring-boot-starter-tomcat["org.springframework.boot:spring-boot-starter-tomcat"]
+    org.springframework.boot_spring-boot-starter-web_2.7.0 --> org.springframework.boot_spring-boot-starter-tomcat
+    org.springframework_spring-web["org.springframework:spring-web"]
+    org.springframework.boot_spring-boot-starter-web_2.7.0 --> org.springframework_spring-web
+    org.springframework_spring-webmvc["org.springframework:spring-webmvc"]
+    org.springframework.boot_spring-boot-starter-web_2.7.0 --> org.springframework_spring-webmvc
