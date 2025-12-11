@@ -10,7 +10,7 @@ value: NUMBER | array | const_ref
 array: "#(" [value+] ")"
 const_ref: ".(" NAME ")."
 
-NUMBER: /[0-9]+/
+NUMBER: /0[bB][01]+/
 NAME: /[_A-Z][_a-zA-Z0-9]*/
 
 %import common.WS
@@ -20,7 +20,7 @@ NAME: /[_A-Z][_a-zA-Z0-9]*/
 @v_args(inline=True)
 class ConfigTransformer(Transformer):
     def NUMBER(self, n):
-        return int(n)
+        return int(n, 2)
     
     def NAME(self, n):
         return str(n)
