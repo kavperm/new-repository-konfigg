@@ -1,0 +1,4 @@
+def PlayerSpeed := 5
+def Enemies := #(10 15 20)
+def Level := #(.(PlayerSpeed). .(Enemies).)
+.(Level).
