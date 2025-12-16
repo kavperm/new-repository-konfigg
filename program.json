@@ -1,0 +1,25 @@
+[
+    {"op": "load_const", "const": 10},
+
+    {"op": "write_mem", "addr": 100},
+
+    {"op": "load_const", "const": 20},
+    
+    {"op": "write_mem", "addr": 101},
+
+    {"op": "load_const", "const": 30},
+    {"op": "write_mem", "addr": 102},
+
+    {"op": "read_mem", "addr": 100},
+    {"op": "write_mem", "addr": 200},
+    {"op": "read_mem", "addr": 101},
+    {"op": "write_mem", "addr": 201},
+    {"op": "read_mem", "addr": 102},
+    {"op": "write_mem", "addr": 202},
+    {"op": "load_const", "const": 25},
+    {"op": "leq", "addr": 100},
+    {"op": "write_mem", "addr": 300},
+    {"op": "load_const", "const": 25},
+    {"op": "leq", "addr": 101},
+    {"op": "write_mem", "addr": 301}
+]
